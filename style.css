@@ -1,101 +1,380 @@
-*{
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-}
-body{
-background-color: #f4f4f4;
-font-family: 'Arial', sans-serif;
-width: 100%;
-min-height: 100vh;
-color: #333;
-line-height: 1.6;
-}
-header{
-background-color: #2c3e50;
-color: white;
-padding: 1rem;
-display: flex;
-justify-content: center;
-align-items: center;
-}
-header h1{
-font-size: 2rem;
-}
-aside{
-width: 250px;
-background-color: #34495e;
-color: white;
-position: fixed;
-top: 0;
-left: -250px;
-height: 100vh;
-overflow-y: auto;
-transition: left 0.3s;
-padding: 1rem;
-}
-aside.show{
-left: 0;
-}
-aside h2, aside h3{
-margin-top: 1rem;
-}
-aside ul{
-list-style: none;
-padding: 0;
-}
-aside li{
-margin: 0.5rem 0;
-}
-aside a{
-color: #ecf0f1;
-text-decoration: none;
-}
-aside a:hover{
-text-decoration: underline;
-}
-main{
-margin-left: 0;
-padding: 1rem;
-transition: margin-left 0.3s;
-}
-main.shift{
-margin-left: 250px;
-}
-#welcome, #hotline-news, #emergency-contact{
-margin-bottom: 2rem;
-}
-#welcome{
-background-color: #ecf0f1;
-padding: 1.5rem;
-border-radius: 5px;
-}
-#hotline-news, #emergency-contact{
-display: grid;
-grid-template-columns: 1fr;
-gap: 1rem;
-}
-.news-item, .contact-item{
-background-color: white;
-border: 1px solid #ddd;
-border-radius: 5px;
-padding: 1rem;
-box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-.news-item h3, .contact-item h3{
-color: #e74c3c;
-margin-bottom: 0.5rem;
-}
-.news-item small{
-color: #7f8c8d;
-font-style: italic;
-}
-@media (max-width: 768px){
-aside{
-width: 200px;
-left: -200px;
-}
-main.shift{
-margin-left: 200px;
-}
-}
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        header h1 {
+            color: #764ba2;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .news-section h2,
+        .emergency-section h2 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .news-articles {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .article-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+        }
+
+        .article-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
+        }
+
+        .article-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3em;
+            min-height: 200px;
+        }
+
+        .article-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .article-category {
+            display: inline-block;
+            background: #764ba2;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            width: fit-content;
+        }
+
+        .article-title {
+            color: #333;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .article-description {
+            color: #666;
+            font-size: 0.95em;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .article-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85em;
+            color: #999;
+        }
+
+        .severity {
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        .severity.high {
+            background: #ff6b6b;
+            color: white;
+        }
+
+        .severity.medium {
+            background: #ffa500;
+            color: white;
+        }
+
+        .severity.low {
+            background: #51cf66;
+            color: white;
+        }
+
+        .emergency-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .emergency-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .emergency-card h3 {
+            color: #764ba2;
+            margin-bottom: 12px;
+            font-size: 1.2em;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            color: #333;
+            font-size: 0.95em;
+        }
+
+        .contact-icon {
+            font-size: 1.3em;
+        }
+
+        .contact-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-label {
+            font-size: 0.85em;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .contact-value {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .close-btn {
+            font-size: 2em;
+            font-weight: bold;
+            color: #aaa;
+            cursor: pointer;
+            background: none;
+            border: none;
+            transition: color 0.3s;
+        }
+
+        .close-btn:hover {
+            color: #333;
+        }
+
+        .modal-title {
+            color: #333;
+            font-size: 1.8em;
+            margin: 0;
+        }
+
+        .modal-category {
+            display: inline-block;
+            background: #764ba2;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .modal-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+
+        .modal-section {
+            margin-bottom: 25px;
+        }
+
+        .modal-section h3 {
+            color: #764ba2;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 8px;
+        }
+
+        .modal-section p {
+            color: #666;
+            line-height: 1.6;
+            margin: 8px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 12px;
+        }
+
+        .stat-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 1.8em;
+            font-weight: bold;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.85em;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+
+        .modal-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            margin-top: 25px;
+            color: #999;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+
+            .article-card {
+                grid-template-columns: 1fr;
+            }
+
+            .article-image {
+                min-height: 150px;
+            }
+
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            .modal-content {
+                padding: 25px;
+            }
+
+            .modal-title {
+                font-size: 1.4em;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }

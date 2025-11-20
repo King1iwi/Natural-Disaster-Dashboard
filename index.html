@@ -3,69 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natural Disaster Dashboard</title>
     <link rel="stylesheet" href="style.css">
-    <title>Natural Disaster Awareness</title>
 </head>
 <body>
-    <header>
-        <h1>Natural Disaster Awareness Dashboard</h1>
-    </header>
+    <div class="container">
+        <header>
+            <h1>🌍 Natural Disaster Dashboard</h1>
+            <p>Stay informed about recent natural disasters and emergency contacts in your community</p>
+        </header>
 
-    <main id="dashboard">
-        <section id="welcome">
-            <h2>Home/Welcome</h2>
-            <p>Welcome to the Natural Disaster Awareness Dashboard. This platform provides essential information to help you stay informed and prepared for natural disasters. Our mission is to promote disaster awareness and equip communities with the knowledge needed to respond effectively to emergencies.</p>
-            <p>The importance of disaster awareness cannot be overstated. Natural disasters can strike unexpectedly, causing significant loss of life and property. By staying informed through this dashboard, you can take proactive steps to protect yourself, your family, and your community.</p>
-            <p>To stay safe: Always have an emergency kit ready, know your evacuation routes, stay tuned to official alerts, and follow instructions from local authorities. Remember, preparation today saves lives tomorrow.</p>
-        </section>
+        <div class="main-content">
+            <div class="news-section">
+                <h2>Recent Disasters</h2>
+                <div class="news-articles" id="articlesContainer"></div>
+            </div>
 
-        <section id="hotline-news">
-            <h2>Hotline News</h2>
-            <p>Stay updated with the latest verified information on natural disasters across the country.</p>
-            <div class="news-item">
-                <h3>Headline #1</h3>
-                <p>News details hre</p>
-                <small>Source of info here</small>
+            <div class="emergency-section">
+                <h2>Emergency Contacts</h2>
+                <div id="emergencyContainer"></div>
             </div>
-            <div class="news-item">
-                <h3>Headline #2</h3><--add your headline here with pictre as background-->
-                
-                <p>News details hre</p>
+        </div>
+    </div>
 
-                <small>Source: newslink </small>
+    <!-- Modal for article details -->
+    <div id="articleModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <div class="modal-icon" id="modalIcon"></div>
+                    <div class="modal-category" id="modalCategory"></div>
+                    <h2 class="modal-title" id="modalTitle"></h2>
+                </div>
+                <button class="close-btn" onclick="closeModal()">&times;</button>
             </div>
-            <div class="news-item">
-                <h3>headline #3</h3>
-                <p>News details hre</p>
-                <small>Source</small>
+            <div id="modalBody"></div>
+            <div class="modal-footer">
+                <span id="modalDate"></span>
+                <span class="severity" id="modalSeverity"></span>
             </div>
-        </section>
+        </div>
+    </div>
 
-        <section id="emergency-contact">
-            <h2>Emergency Contact</h2>
-            <p>In case of emergency, contact these key personnel and organizations for immediate assistance.</p>
-            <div class="contact-item">
-                <h3>National Level</h3>
-                <p>Number and link here</p>
-            </div>
-            <div class="contact-item">
-                <h3>Regional Level</h3>
-                <p>Number and link here</p>
-            </div>
-            <div class="contact-item">
-                <h3>City level</h3>
-                <p>Number and link here</p>
-            </div>
-            <div class="contact-item">
-                <h3>Local Fire Department</h3>
-                <p>Number and link here</p>
-            </div>
-            <div class="contact-item">
-                <h3>SOCMED ex DILG</h3>
-                <p>Number and link here</p>
-            </div>
-        </section>
-    </main>
-    <script src="index.js"></script>
+    <script src="index.js">
+    </script>
 </body>
 </html>

@@ -95,33 +95,33 @@
         // Emergency contacts data
         const emergencyContacts = [
             {
-                name: "National Disaster Response",
-                number: "911",
+                name: "Philippines National Office",
+                number: "9-911",
                 type: "🚨"
             },
             {
-                name: "Medical Emergency",
-                number: "118",
+                name: "Department Of Health (DOH)",
+                number: "87111001-02 || 8740-5030",
                 type: "🏥"
             },
             {
-                name: "Fire Department",
-                number: "113",
+                name: "Bureau Of Fire Protection (BFP)",
+                number: "(02) 8426-0219 || (02) 8790-8400",
                 type: "🚒"
             },
             {
-                name: "Disaster Management Authority",
-                number: "1234-567-8900",
+                name: "NDRRMC",
+                number: "8911-1406",
                 type: "📱"
             },
             {
-                name: "Community Safety Hotline",
-                number: "1-800-SAFETY",
+                name: "PAGASA",
+                number: "8284-0800",
                 type: "☎️"
             },
             {
-                name: "Red Cross Services",
-                number: "1-800-REDCROSS",
+                name: "Philippines Red Cross (PRC)",
+                number: "9-143 || 8790-2300",
                 type: "🔴"
             }
         ];
